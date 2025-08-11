@@ -20,7 +20,7 @@ jobs:
               env:
                 PORTER_APP_NAME: go-crasher
                 PORTER_CLUSTER: "1"
-                PORTER_DEPLOYMENT_TARGET_ID: e971c2cb-3497-4ac6-9eae-369e0b7d1e72
+                PORTER_DEPLOYMENT_TARGET_ID: 213df3a8-9cbd-4631-998d-576babd6ffcd
                 PORTER_HOST: https://gil.withporter.run
                 PORTER_PR_NUMBER: ${{ github.event.number }}
                 PORTER_PROJECT: "1"
