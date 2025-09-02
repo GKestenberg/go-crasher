@@ -16,6 +16,8 @@ func main() {
 
 	// Crash endpoint
 	http.HandleFunc("/crash", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "text/plain")
+		fmt.Fprint(w, "Hello World")
 		panic("Intentional crash triggered by /crash endpoint")
 	})
 
