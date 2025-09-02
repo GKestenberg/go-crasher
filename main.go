@@ -26,7 +26,7 @@ func main() {
 	})
 
 	// Start server
-	port := ":8080"
+	port := ":3000"
 	fmt.Printf("🎯 Starting server on http://localhost%s\n", port)
 	fmt.Println("📊 Visit http://localhost:8080 for Hello World")
 	fmt.Println("💥 Visit http://localhost:8080/crash to crash the server")
