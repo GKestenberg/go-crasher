@@ -15,7 +15,7 @@ func main() {
 	})
 
 	// Crash endpoint
-	http.HandleFunc("/crash", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/die", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/plain")
 		fmt.Fprint(w, "Hello World")
 		panic("Intentional crash triggered by /crash endpoint")
@@ -30,8 +30,8 @@ func main() {
 	// Start server
 	port := ":3000"
 	fmt.Printf("🎯 Starting server on http://localhost%s\n", port)
-	fmt.Println("📊 Visit http://localhost:8080 for Hello World")
-	fmt.Println("💥 Visit http://localhost:8080/crash to crash the server")
+	fmt.Println("📊 Visit http://localhost:3000 for Hello World")
+	fmt.Println("💥 Visit http://localhost:3000/die to crash the server")
 
 	log.Fatal(http.ListenAndServe(port, nil))
 }
