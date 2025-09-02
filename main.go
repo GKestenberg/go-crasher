@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -15,10 +16,13 @@ func main() {
 	})
 
 	// Crash endpoint
-	http.HandleFunc("/die", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/crash", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/plain")
-		fmt.Fprint(w, "Hello World")
-		panic("Intentional crash triggered by /crash endpoint")
+		fmt.Fprint(w, "Goodbye!")
+		go func() {
+			time.Sleep(100 * time.Millisecond) // Give response time to send
+			os.Exit(1)
+		}()
 	})
 
 	// Health endpoint
@@ -31,7 +35,7 @@ func main() {
 	port := ":3000"
 	fmt.Printf("🎯 Starting server on http://localhost%s\n", port)
 	fmt.Println("📊 Visit http://localhost:3000 for Hello World")
-	fmt.Println("💥 Visit http://localhost:3000/die to crash the server")
+	fmt.Println("💥 Visit http://localhost:3000/crash to crash the server")
 
 	log.Fatal(http.ListenAndServe(port, nil))
 }
