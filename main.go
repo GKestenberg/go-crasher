@@ -12,7 +12,7 @@ func main() {
 	// Hello World endpoint
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/plain")
-		fmt.Fprint(w, "Hello World")
+		fmt.Fprint(w, "Hello World!")
 	})
 
 	// Crash endpoint
