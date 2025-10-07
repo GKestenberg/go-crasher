@@ -20,7 +20,7 @@ jobs:
               env:
                 PORTER_APP_NAME: go-crash
                 PORTER_CLUSTER: "1"
-                PORTER_DEPLOYMENT_TARGET_ID: 22c82916-5759-4eb0-87ab-e84f89a84c81
+                PORTER_DEPLOYMENT_TARGET_ID: 8f2e74ef-07c1-449b-b917-56b0b169af59
                 PORTER_HOST: https://gil.withporter.run
                 PORTER_PR_NUMBER: ${{ github.event.number }}
                 PORTER_PROJECT: "1"
