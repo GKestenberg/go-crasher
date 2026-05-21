@@ -1,0 +1,19 @@
+version: v2
+name: go-crasher
+
+services:
+  - name: web
+    type: web
+    run: ./server
+    port: 3000
+    cpuCores: 0.1
+    ramMegabytes: 256
+    instances: 1
+    healthCheck:
+      enabled: true
+      httpPath: /health
+
+build:
+  method: docker
+  context: ./
+  dockerfile: ./Dockerfile
